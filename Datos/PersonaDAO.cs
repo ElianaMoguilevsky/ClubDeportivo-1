@@ -51,7 +51,7 @@ namespace clubDeportivo.Datos
 
         // Método para inscribir un SOCIO
         public bool InscribirSocio(string nombre, string apellido, string documento,
-                                    string telefono, DateTime fechaNacimiento, bool aptoFisico)
+                                    string telefono, DateTime FNacimiento, bool aptoFisico)
         {
             MySqlConnection? sqlCon = null;
             try
@@ -66,16 +66,22 @@ namespace clubDeportivo.Datos
 
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 MySqlCommand comando = new MySqlCommand(
-                    "INSERT INTO socio (Nombre, Apellido, Documento, Telefono, FechaNacimiento, AptoFisico) " +
-                    "VALUES (@nombre, @apellido, @documento, @telefono, @fechaNacimiento, @aptoFisico)",
+                    "INSERT INTO socio (Nombre, Apellido, Documento, Telefono, FechaNacimiento, AptoFisico, FechaVencimientoCuota) " +
+                    "VALUES (@nombre, @apellido, @documento, @telefono, @fechaNacimiento, @aptoFisico, @fechaVencimientoCuota)",
                     sqlCon);
 
                 comando.Parameters.AddWithValue("@nombre", nombre);
                 comando.Parameters.AddWithValue("@apellido", apellido);
                 comando.Parameters.AddWithValue("@documento", documento);
                 comando.Parameters.AddWithValue("@telefono", telefono);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento.ToString("yyyy-MM-dd"));
-                comando.Parameters.AddWithValue("@aptoFisico", aptoFisico);
+                comando.Parameters.AddWithValue("@fechaNacimiento", FNacimiento.ToString("dd-MM-yyyy"));
+                comando.Parameters.AddWithValue("@aptoFisico", aptoFisico);              
+                comando.Parameters.AddWithValue("@activo", 1);
+
+                DateTime fInscripcion = DateTime.Now.Date;
+                DateTime fechaVencimientoCuota = fInscripcion.AddMonths(1);
+                comando.Parameters.AddWithValue("@fechaVencimientoCuota", fechaVencimientoCuota.ToString("d-MM-yyyy"));
+
 
                 sqlCon.Open();
                 int filasAfectadas = comando.ExecuteNonQuery();
@@ -107,7 +113,7 @@ namespace clubDeportivo.Datos
 
         // Método para inscribir un NO SOCIO
         public bool InscribirNoSocio(string nombre, string apellido, string documento,
-                                      string telefono, DateTime fechaNacimiento, bool aptoFisico)
+                                      string telefono, DateTime FNacimiento, bool aptoFisico)
         {
             MySqlConnection? sqlCon = null;
             try
@@ -130,7 +136,7 @@ namespace clubDeportivo.Datos
                 comando.Parameters.AddWithValue("@apellido", apellido);
                 comando.Parameters.AddWithValue("@documento", documento);
                 comando.Parameters.AddWithValue("@telefono", telefono);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento.ToString("yyyy-MM-dd"));
+                comando.Parameters.AddWithValue("@fechaNacimiento", FNacimiento.ToString("dd-MM-yyyy"));
                 comando.Parameters.AddWithValue("@aptoFisico", aptoFisico);
 
                 sqlCon.Open();

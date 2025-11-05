@@ -110,7 +110,7 @@ namespace clubDeportivo
                     {
                         file.WriteLine("===============================================");
                         file.WriteLine("     LISTADO DE SOCIOS CON CUOTA VENCIDA");
-                        file.WriteLine($"     Fecha: {DateTime.Now:dd/MM/yyyy HH:mm}");
+                        file.WriteLine($"     Fecha: {DateTime.Now:dd/MM/yyyy}");
                         file.WriteLine("===============================================");
                         file.WriteLine();
                         file.WriteLine($"Total de morosos: {morosos.Count}");
