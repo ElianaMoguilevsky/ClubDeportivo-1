@@ -104,10 +104,6 @@ namespace clubDeportivo
                 var frm = new FormComprobanteActividad(noSocioActual, actividad, importe);
                 frm.ShowDialog();
             }
-
-            // 6) Limpiar / cerrar
-            txtActividadAPagar.Clear();
-            txtMonto.Clear();
             Close();
         }
 
