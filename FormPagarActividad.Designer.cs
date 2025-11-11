@@ -286,7 +286,7 @@
             txtActividadAPagar.ForeColor = SystemColors.Desktop;
             txtActividadAPagar.Location = new Point(163, 178);
             txtActividadAPagar.Name = "txtActividadAPagar";
-            txtActividadAPagar.PlaceholderText = "Actividad a Pagar";
+            txtActividadAPagar.ReadOnly = true;
             txtActividadAPagar.Size = new Size(238, 23);
             txtActividadAPagar.TabIndex = 72;
             // 
@@ -314,6 +314,7 @@
             // 
             txtNombre.Location = new Point(163, 119);
             txtNombre.Name = "txtNombre";
+            txtNombre.ReadOnly = true;
             txtNombre.Size = new Size(187, 23);
             txtNombre.TabIndex = 79;
             // 
@@ -321,6 +322,7 @@
             // 
             txtApellido.Location = new Point(163, 149);
             txtApellido.Name = "txtApellido";
+            txtApellido.ReadOnly = true;
             txtApellido.Size = new Size(187, 23);
             txtApellido.TabIndex = 80;
             // 

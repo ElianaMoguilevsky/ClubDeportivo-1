@@ -161,7 +161,7 @@
             txtNombre.ForeColor = Color.Black;
             txtNombre.Location = new Point(165, 117);
             txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Nombre del socio";
+            txtNombre.ReadOnly = true;
             txtNombre.Size = new Size(238, 23);
             txtNombre.TabIndex = 38;
             // 
@@ -171,7 +171,7 @@
             txtApellido.ForeColor = Color.Black;
             txtApellido.Location = new Point(165, 146);
             txtApellido.Name = "txtApellido";
-            txtApellido.PlaceholderText = "Apellido del socio";
+            txtApellido.ReadOnly = true;
             txtApellido.Size = new Size(238, 23);
             txtApellido.TabIndex = 39;
             // 
@@ -214,7 +214,7 @@
             txtUltimoVencimiento.ForeColor = Color.Black;
             txtUltimoVencimiento.Location = new Point(165, 177);
             txtUltimoVencimiento.Name = "txtUltimoVencimiento";
-            txtUltimoVencimiento.PlaceholderText = "Ultimo vencimiento registrado";
+            txtUltimoVencimiento.ReadOnly = true;
             txtUltimoVencimiento.Size = new Size(238, 23);
             txtUltimoVencimiento.TabIndex = 43;
             // 
