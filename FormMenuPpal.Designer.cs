@@ -39,10 +39,10 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(162, 63);
+            lblTitulo.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(145, 54);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(264, 49);
+            lblTitulo.Size = new Size(208, 31);
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Club Deportivo";
             // 
@@ -112,7 +112,7 @@
             // 
             // FormMenuPpal
             // 
-            AutoScaleDimensions = new SizeF(11F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(484, 437);
